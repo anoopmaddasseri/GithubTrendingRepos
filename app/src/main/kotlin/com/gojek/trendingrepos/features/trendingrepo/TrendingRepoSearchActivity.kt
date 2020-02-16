@@ -9,6 +9,10 @@ import com.gojek.trendingrepos.base.BaseActivity
 import com.gojek.trendingrepos.commons.Error
 import com.gojek.trendingrepos.commons.Loading
 import com.gojek.trendingrepos.commons.Success
+import com.gojek.trendingrepos.util.hide
+import com.gojek.trendingrepos.util.show
+import kotlinx.android.synthetic.main.activity_trending_repository.*
+import kotlinx.android.synthetic.main.layout_status_loading.*
 import javax.inject.Inject
 
 class TrendingRepoSearchActivity : BaseActivity() {
@@ -26,6 +30,7 @@ class TrendingRepoSearchActivity : BaseActivity() {
     override fun initComponents(savedInstanceState: Bundle?) {
         observeUiState()
         observeSearchResults()
+        fetchTrendingRepositories()
     }
 
     override fun getLayoutId() = R.layout.activity_trending_repository
@@ -46,12 +51,19 @@ class TrendingRepoSearchActivity : BaseActivity() {
     }
 
     private fun fetchTrendingRepositories() {
+        trendingRepositoryViewModel.executeTrendingRepositorySearch()
     }
 
     private fun displayLoadingState() {
+        rvRepository.hide()
+        containerShimmer.show()
+        containerShimmer.showShimmer(true)
     }
 
     private fun hideLoadingState() {
+        rvRepository.show()
+        containerShimmer.hide()
+        containerShimmer.stopShimmer()
     }
 
     private fun displayNoSearchResults() {

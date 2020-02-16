@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dimen_avatar_placeholder_padding"
+    android:paddingBottom="@dimen/dimen_avatar_placeholder_padding">
+
+    <ImageView
+        android:id="@+id/ivAvatarPlaceHolder"
+        android:layout_width="@dimen/dimen_avatar_placeholder"
+        android:layout_height="@dimen/dimen_avatar_placeholder"
+        android:layout_marginStart="@dimen/md_margin_padding_size_medium"
+        android:contentDescription="@string/content_desc_avatar"
+        android:src="@drawable/drawable_round_holder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vPlaceUserName"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_placeholder_username_height"
+        android:layout_marginStart="@dimen/dimen_placeholder_username_leading_margin"
+        android:background="@drawable/drawable_placeholder_rectangle"
+        app:layout_constraintHorizontal_bias="0.250"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatarPlaceHolder"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".4" />
+
+    <View
+        android:id="@+id/vPlaceRepoName"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_placeholder_username_height"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/dimen_placeholder_username_trailing_margin"
+        android:background="@drawable/drawable_placeholder_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vPlaceUserName"
+        app:layout_constraintTop_toBottomOf="@id/vPlaceUserName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
