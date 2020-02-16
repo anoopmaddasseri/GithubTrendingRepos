@@ -7,12 +7,17 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.gojek.trendingrepos.databinding.ItemTrendingRepoBinding
 import com.gojek.trendingrepos.models.TrendingRepositoryUiModel
-
+import com.gojek.trendingrepos.util.circleCrop
+import com.gojek.trendingrepos.util.hide
+import com.gojek.trendingrepos.util.setDrawableBackgroundColor
+import com.gojek.trendingrepos.util.show
 
 class TrendingRepoSearchResultAdapter(val onClick: (TrendingRepositoryUiModel) -> Unit) :
     ListAdapter<TrendingRepositoryUiModel, TrendingRepoSearchResultAdapter.TrendingRepoViewHolder>(
         TrendingRepoDiffUtil
     ) {
+
+    private var lastSelectedPosition: Int = RecyclerView.NO_POSITION
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrendingRepoViewHolder {
         val context = parent.context
@@ -29,8 +34,52 @@ class TrendingRepoSearchResultAdapter(val onClick: (TrendingRepositoryUiModel) -
         fun bind(modelRepository: TrendingRepositoryUiModel, position: Int) {
             binding.searchedTrendingRepo = modelRepository
             binding.executePendingBindings()
+            populateData(modelRepository)
+            binding.root.setOnClickListener {
+                expandCollapse(modelRepository, position)
+            }
         }
 
+        private fun populateData(modelRepository: TrendingRepositoryUiModel) {
+            binding.apply {
+                modelRepository.let { it ->
+                    it.languageColor?.let { binding.tvRepoLang.setDrawableBackgroundColor(it) }
+                    it.avatar.let { binding.ivUserAvatar.circleCrop(it) }
+                    if (it.expand) {
+                        groupExpansion.show()
+                    } else {
+                        groupExpansion.hide()
+                    }
+                }
+            }
+        }
+
+        private fun expandCollapse(
+            modelRepository: TrendingRepositoryUiModel,
+            position: Int
+        ) {
+            //Expand on clicking same item in collapsed state
+            if (lastSelectedPosition == position && !modelRepository.expand) {
+                modelRepository.expand = true
+                notifyItemChanged(position)
+                return
+            }
+            //Collapse previous item
+            if (lastSelectedPosition != RecyclerView.NO_POSITION) {
+                getItem(lastSelectedPosition).expand = false
+                notifyItemChanged(lastSelectedPosition)
+            }
+            //Return when click on already expanded item
+            if (lastSelectedPosition == position) {
+                return
+            }
+            //Expand clicked  item
+            modelRepository.let {
+                it.expand = !it.expand
+            }
+            notifyItemChanged(position)
+            lastSelectedPosition = position
+        }
     }
 
     companion object {
