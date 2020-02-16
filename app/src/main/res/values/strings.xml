@@ -24,6 +24,7 @@
     <string name="info_gamification_message">An alien is probably blocking your signal.</string>
 
     <!--Common Errors-->
+    <string name="error_no_browser">You don\'t have any browser to open web page</string>
     <string name="error_something_went_wrong">Something went wrong..</string>
 
 </resources>

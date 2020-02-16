@@ -38,6 +38,10 @@ class TrendingRepoSearchResultAdapter(val onClick: (TrendingRepositoryUiModel) -
             binding.root.setOnClickListener {
                 expandCollapse(modelRepository, position)
             }
+            binding.root.setOnLongClickListener {
+                onClick(modelRepository)
+                return@setOnLongClickListener true
+            }
         }
 
         private fun populateData(modelRepository: TrendingRepositoryUiModel) {

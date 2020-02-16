@@ -11,10 +11,7 @@ import com.gojek.trendingrepos.commons.Error
 import com.gojek.trendingrepos.commons.Loading
 import com.gojek.trendingrepos.commons.Success
 import com.gojek.trendingrepos.models.TrendingRepositoryUiModel
-import com.gojek.trendingrepos.util.hide
-import com.gojek.trendingrepos.util.initRecyclerViewWithLineDecoration
-import com.gojek.trendingrepos.util.show
-import com.gojek.trendingrepos.util.showSnackbar
+import com.gojek.trendingrepos.util.*
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 import kotlinx.android.synthetic.main.activity_trending_repository.*
 import kotlinx.android.synthetic.main.layout_error_status_notifier.*
@@ -30,6 +27,7 @@ class TrendingRepoSearchActivity : BaseActivity() {
 
     private val trendingRepoSearchResultAdapter: TrendingRepoSearchResultAdapter by lazy {
         TrendingRepoSearchResultAdapter {
+            launchUrl(this, it.url)
         }
     }
 
