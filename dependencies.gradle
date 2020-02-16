@@ -1,0 +1,83 @@
+ext {
+    //Android Core
+    compileSdkVersion = 29
+    targetSdkVersion = 29
+    minSdkVersion = 19
+    buildToolsVersion = "29.0.2"
+
+    //App Versioning
+    versionCode = 1
+    versionName = "1.0"
+
+    //Dependencies Version - Presentation
+    appcompatVersion = '1.1.0'
+    androidxCoreKtxVersion = '1.2.0'
+    constraintLayoutVersion = '1.1.3'
+    supportV4Version = '1.0.0'
+    fragmentKtxVersion = '1.1.0'
+    materialVersion = '1.1.0'
+    leakCanaryVersion = '2.0'
+    dagger2Version = '2.25.3'
+    lifecycleExtensionsVersion = '2.1.0'
+    cardViewVersion = '1.0.0'
+    recyclerviewAnimationVersion = '3.0.0'
+    shimmerAnimationVersion = '0.5.0'
+
+
+    //Data
+    retrofitVersion = '2.7.0'
+    moshiConverterVersion = '2.7.0'
+    loggingInterceptorVersion = '4.2.1'
+
+    //Testing
+    junitVersion = '4.12'
+    espressoVersion = '3.2.0'
+    androidxJunitVersion = '1.1.1'
+    runnerVersion = '1.2.0'
+    coroutinesCoreVersion = '1.3.3'
+
+    //App/Presentation Layer
+    appDependencies = [
+            kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            appCompat              : "androidx.appcompat:appcompat:$appcompatVersion",
+            androidxKtx            : "androidx.core:core-ktx:$androidxCoreKtxVersion",
+            constraintLayout       : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            supportV4              : "androidx.legacy:legacy-support-v4:$supportV4Version",
+            fragmentKtx            : "androidx.fragment:fragment-ktx:$fragmentKtxVersion",
+            material               : "com.google.android.material:material:$materialVersion",
+            leakCanary             : "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion",
+            dagger2Processor       : "com.google.dagger:dagger-compiler:$dagger2Version",
+            dagger2                : "com.google.dagger:dagger:$dagger2Version",
+            dagger2Android         : "com.google.dagger:dagger-android:$dagger2Version",
+            dagger2AndroidProcessor: "com.google.dagger:dagger-android-processor:$dagger2Version",
+            lifecycleExtensions    : "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionsVersion",
+            lifecycleViewModel     : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleExtensionsVersion",
+            cardview               : "androidx.cardview:cardview:$cardViewVersion",
+            recyclerviewAnimations : "jp.wasabeef:recyclerview-animators:$recyclerviewAnimationVersion",
+            shimmerAnimation       : "com.facebook.shimmer:shimmer:$shimmerAnimationVersion"
+    ]
+
+    dataDependencies = [
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            retrofit          : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            moshiConverter    : "com.squareup.retrofit2:converter-moshi:$moshiConverterVersion",
+            loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion",
+            coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion",
+            dagger2Processor  : "com.google.dagger:dagger-compiler:$dagger2Version",
+            dagger2           : "com.google.dagger:dagger:$dagger2Version"
+    ]
+
+    domainDependencies = [
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            coroutinesCore  : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion",
+            dagger2Processor: "com.google.dagger:dagger-compiler:$dagger2Version",
+            dagger2         : "com.google.dagger:dagger:$dagger2Version"
+    ]
+
+    testDependencies = [
+            junit        : "junit:junit:$junitVersion",
+            androidxJunit: "androidx.test.ext:junit:$androidxJunitVersion",
+            espressoCore : "androidx.test.espresso:espresso-core:$espressoVersion",
+            runner       : "androidx.test:runner:$runnerVersion"
+    ]
+}

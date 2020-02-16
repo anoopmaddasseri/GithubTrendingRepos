@@ -4,15 +4,88 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'jacoco-android'
+
+jacoco {
+    toolVersion = "0.8.4"
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
+
+jacocoAndroidUnitTestReport {
+    xml.enabled true
+}
+
+static def getVersionProperty(property) {
+    def props = new Properties()
+    props.load(new FileInputStream("version.properties"))
+    return props.get(property)
+}
+
+/*Todo - Replace the logic with CI/CD plan repo branchName.
+   No repo available hence take by build type*/
+
+static def getBranchPrefix(buildType) {
+    if (buildType == null || buildType.isEmpty()) {
+        return ""
+    }
+    if (buildType.find('debug')) {
+        return "d"
+    } else if (buildType.find('release')) {
+        return "r"
+    }
+}
+
+/*Todo - Replace the logic with CI/CD plan repo build number.
+   No repo available hence taken random number*/
+//calculate version code:
+//This is the current date since 1/1/2016, in 5-min increment.
+// roughly 100000 per year (365*24*60/5 = 105120)
+static def versionCode() {
+    // Integer, seconds since epoch.
+    long epochSeconds = new Date().getTime() / 1000
+    //1420070400 = date +%s -d 1/1/2015 (on Unix, not on mac...)
+    return (int) ((epochSeconds - 1420070400) / (60 * 5))
+}
+
+/*TODO - Replace the logic with "git describe" to get current tag/branch and relative commit.
+   No repo available hence take by build type & versionCode*/
+//Create a version string to place in the versionName xml attribute:
+// - use VERSION_NAME env. var (if exists)
+// - build type variant and version code as suffix
+def versionName(buildType, versionCode) {
+    String versionName = getVersionProperty("workspace.version.name") + " (" + buildType + versionCode + ")"
+    println "versionName = " + versionName
+    return versionName
+}
+
+//check if running under the IDE
+//NOTE: it works on mac... might return "False" for windows/linux.
+def isIDE = String.valueOf(System.getenv("XPC_SERVICE_NAME")).contains("android.studio")
+
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    def buildType //define here to update build variant type
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            buildType = variant.name
+            outputFileName = "${rootProject.name}_${variant.versionName}.apk"
+        }
+    }
+
     defaultConfig {
         applicationId "com.gojek.trendingrepos"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode isIDE ? 12345678 : versionCode()
+        versionName isIDE ? "instantrun.ver" : versionName(getBranchPrefix(buildType), versionCode)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -20,18 +93,87 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            testCoverageEnabled true
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    productFlavors {
     }
 }
 
 dependencies {
+    def appDependencies = rootProject.ext.appDependencies
+    def testDependencies = rootProject.ext.testDependencies
+
+    //Local libs
+    implementation project(':data')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Standards
+    implementation appDependencies.kotlin
+    implementation appDependencies.appCompat
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.supportV4
+    implementation appDependencies.cardview
+
+    //Jetpack suits libs
+    implementation appDependencies.lifecycleExtensions
+    implementation appDependencies.lifecycleViewModel
+    implementation appDependencies.androidxKtx
+    implementation appDependencies.fragmentKtx
+
+    //Material
+    implementation appDependencies.material
+
+    //Animations
+    implementation appDependencies.recyclerviewAnimations
+    implementation appDependencies.shimmerAnimation
+
+    //Memory profiler & optimization
+    debugImplementation appDependencies.leakCanary
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    kapt 'com.github.bumptech.glide:compiler:4.10.0'
+
+    //Dependency Injection
+    implementation appDependencies.dagger2
+    implementation appDependencies.dagger2Android
+    kapt appDependencies.dagger2AndroidProcessor
+    kapt appDependencies.dagger2Processor
+
+    //Test libs
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.androidxJunit
+    androidTestImplementation testDependencies.runner
+    androidTestImplementation testDependencies.espressoCore
 }

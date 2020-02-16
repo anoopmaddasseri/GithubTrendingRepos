@@ -1,2 +1,2 @@
-include ':app'
-rootProject.name='Gojek-Exercise-Trending-Repos'
+include ':app', ':data', ':domain'
+rootProject.name='Gojek'
