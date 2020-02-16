@@ -17,6 +17,7 @@ import com.gojek.trendingrepos.util.show
 import com.gojek.trendingrepos.util.showSnackbar
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 import kotlinx.android.synthetic.main.activity_trending_repository.*
+import kotlinx.android.synthetic.main.layout_error_status_notifier.*
 import kotlinx.android.synthetic.main.layout_status_loading.*
 import javax.inject.Inject
 
@@ -35,6 +36,7 @@ class TrendingRepoSearchActivity : BaseActivity() {
     override fun initComponents(savedInstanceState: Bundle?) {
         observeUiState()
         observeSearchResults()
+        addListeners()
         fetchTrendingRepositories()
     }
 
@@ -54,6 +56,16 @@ class TrendingRepoSearchActivity : BaseActivity() {
         trendingRepositoryViewModel.searchResultsTrendingRepositories.observe(this, Observer {
             displaySearchResults(it)
         })
+    }
+
+    private fun addListeners() {
+        swipeRepoRefresh.setOnRefreshListener {
+            fetchTrendingRepositories()
+            swipeRepoRefresh.isRefreshing = false
+        }
+        lookUpButton.setOnClickListener {
+            fetchTrendingRepositories()
+        }
     }
 
     private fun fetchTrendingRepositories() {
