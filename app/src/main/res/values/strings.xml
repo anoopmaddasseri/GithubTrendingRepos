@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Gojek-Exercise-Trending-Repos</string>
+    <string name="app_name">Github Trend</string>
+
+    <!--Commons-->
+    <string name="common_ok">OK</string>
+    <string name="common_cancel">Cancel</string>
+
+    <!--Fonts-->
+    <string name="roboto_thin" translatable="false">roboto_thin</string>
+    <string name="roboto_light" translatable="false">roboto_light</string>
+    <string name="roboto_regular" translatable="false">roboto_regular</string>
+    <string name="roboto_medium" translatable="false">roboto_medium</string>
+    <string name="roboto_bold" translatable="false">roboto_bold</string>
+    <string name="roboto_regular_italic" translatable="false">roboto_italic</string>
+    <string name="roboto_medium_italic" translatable="false">roboto_medium_italic</string>
 </resources>
