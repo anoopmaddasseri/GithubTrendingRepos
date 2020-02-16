@@ -1,15 +1,9 @@
-/*
- * @author   Anoop Maddasseri <anoopmaddasseri@gmail.com>
- * @version  1
- * @since    16th Feb 2020
- *
- * P.S. Increment version when editing
- */
 package com.gojek.trendingrepos.di
 
 import android.content.Context
 import com.gojek.trendingrepos.GojekTrendingReposApplication
 import com.gojek.trendingrepos.di.modules.ActivityBuilderModule
+import com.gojek.trendingrepos.di.modules.TrendingRepoApiModule
 import com.gojek.trendingrepos.di.modules.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
@@ -22,6 +16,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
+        AndroidInjectionModule::class,
+        TrendingRepoApiModule::class,
         ActivityBuilderModule::class,
         ViewModelModule::class
     ]
