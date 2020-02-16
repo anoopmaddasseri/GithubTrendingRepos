@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDefaultBg"
+    android:elevation="@dimen/md_margin_padding_size_micro"
+    android:padding="@dimen/md_margin_padding_size_small"
+    app:elevation="@dimen/md_margin_padding_size_micro">
+
+    <ImageView
+        android:id="@+id/ivErrorIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/error_something_went_wrong"
+        android:src="@drawable/ic_error_indicator"
+        app:layout_constraintBottom_toTopOf="@+id/lookUpButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".5" />
+
+    <com.gojek.trendingrepos.widget.CustomTextView
+        android:id="@+id/tvErrorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/md_margin_padding_size_large"
+        android:text="@string/error_something_went_wrong"
+        android:textSize="@dimen/md_text_size_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivErrorIndicator"
+        app:textFont="bold" />
+
+    <com.gojek.trendingrepos.widget.CustomTextView
+        android:id="@+id/tvErrorSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/md_margin_padding_size_small"
+        android:text="@string/info_gamification_message"
+        android:textSize="@dimen/md_text_size_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvErrorTitle"
+        app:textFont="regular" />
+
+
+    <com.gojek.trendingrepos.widget.CustomButton
+        android:id="@+id/lookUpButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/md_standard_button_size"
+        android:layout_margin="@dimen/margin_default"
+        android:background="@color/colorPrimary"
+        android:text="@string/action_retry"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGreen800"
+        app:cornerRadius="@dimen/md_margin_padding_size_micro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:rippleColor="@color/colorGreen100"
+        app:strokeColor="@color/colorGreen800"
+        app:textFont="medium" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

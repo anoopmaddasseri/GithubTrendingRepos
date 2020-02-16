@@ -2,6 +2,7 @@ package com.gojek.trendingrepos.features.trendingrepo
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.gojek.trendingrepos.R
@@ -9,8 +10,12 @@ import com.gojek.trendingrepos.base.BaseActivity
 import com.gojek.trendingrepos.commons.Error
 import com.gojek.trendingrepos.commons.Loading
 import com.gojek.trendingrepos.commons.Success
+import com.gojek.trendingrepos.models.TrendingRepositoryUiModel
 import com.gojek.trendingrepos.util.hide
+import com.gojek.trendingrepos.util.initRecyclerViewWithLineDecoration
 import com.gojek.trendingrepos.util.show
+import com.gojek.trendingrepos.util.showSnackbar
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 import kotlinx.android.synthetic.main.activity_trending_repository.*
 import kotlinx.android.synthetic.main.layout_status_loading.*
 import javax.inject.Inject
@@ -47,6 +52,7 @@ class TrendingRepoSearchActivity : BaseActivity() {
 
     private fun observeSearchResults() {
         trendingRepositoryViewModel.searchResultsTrendingRepositories.observe(this, Observer {
+            displaySearchResults(it)
         })
     }
 
@@ -66,10 +72,35 @@ class TrendingRepoSearchActivity : BaseActivity() {
         containerShimmer.stopShimmer()
     }
 
+    private fun displaySearchResults(repoSearchResult: List<TrendingRepositoryUiModel>) {
+        if (repoSearchResult.isNotEmpty()) {
+            if (layoutError.isVisible) {
+                layoutError.hide()
+            }
+
+            rvRepository.apply {
+                adapter =
+                    ScaleInAnimationAdapter(trendingRepoSearchResultAdapter.apply {
+                        submitList(
+                            repoSearchResult
+                        )
+                    })
+                initRecyclerViewWithLineDecoration(this@TrendingRepoSearchActivity)
+            }
+        } else displayNoSearchResults()
+    }
+
     private fun displayNoSearchResults() {
+        showSnackbar(
+            rvRepository,
+            getString(R.string.label_no_times)
+        )
     }
 
     private fun displayErrorState(error: Throwable) {
+        hideLoadingState()
+        layoutError.show()
+        showSnackbar(rvRepository, "${error.message}")
     }
 
 }
