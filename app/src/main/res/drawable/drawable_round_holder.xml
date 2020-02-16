@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <size
+        android:width="@dimen/dimen_avatar"
+        android:height="@dimen/dimen_avatar" />
+    <solid android:color="@color/colorGrey" />
+</shape>

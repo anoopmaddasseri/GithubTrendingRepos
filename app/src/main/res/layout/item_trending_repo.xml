@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchedTrendingRepo"
+            type="com.gojek.trendingrepos.models.TrendingRepositoryUiModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerTrendingRepo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="@dimen/margin_default">
+
+        <ImageView
+            android:id="@+id/ivUserAvatar"
+            android:layout_width="@dimen/dimen_avatar"
+            android:layout_height="@dimen/dimen_avatar"
+            android:contentDescription="@string/content_desc_avatar"
+            android:src="@drawable/drawable_round_holder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.gojek.trendingrepos.widget.CustomTextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_placeholder_username_leading_margin"
+            android:lines="1"
+            android:text="@{searchedTrendingRepo.author}"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/md_text_size_micro"
+            app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textFont="regular"
+            tools:text="Username" />
+
+        <com.gojek.trendingrepos.widget.CustomTextView
+            android:id="@+id/tvRepoName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/md_margin_padding_size_small"
+            android:lines="1"
+            android:text="@{searchedTrendingRepo.name}"
+            android:textColor="@color/colorGrey800"
+            android:textSize="@dimen/md_text_size_medium"
+            app:layout_constraintStart_toStartOf="@+id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@id/tvUsername"
+            app:textFont="regular"
+            tools:text="Repo Name" />
+
+        <com.gojek.trendingrepos.widget.CustomTextView
+            android:id="@+id/tvRepoDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_repo_desc_margin"
+            android:maxLines="2"
+            android:text="@{searchedTrendingRepo.description}"
+            android:textColor="@color/colorGrey800"
+            android:textSize="@dimen/md_text_size_small"
+            app:layout_constraintEnd_toEndOf="@id/tvRepoName"
+            app:layout_constraintStart_toStartOf="@+id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoName"
+            app:textFont="regular"
+            tools:text="Repo Desc" />
+
+        <com.gojek.trendingrepos.widget.CustomTextView
+            android:id="@+id/tvRepoLang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_placeholder_username_leading_margin"
+            android:layout_marginTop="@dimen/dimen_repo_lang_margin"
+            android:drawableStart="@drawable/drawable_cricle_lang"
+            android:drawablePadding="@dimen/md_margin_padding_size_small"
+            android:lines="1"
+            android:text="@{searchedTrendingRepo.getDefault(searchedTrendingRepo.language,@string/label_unknown)}"
+            android:textColor="@color/colorGrey800"
+            android:textSize="@dimen/md_text_size_small"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/ivUserAvatar"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoDesc"
+            app:textFont="regular"
+            tools:text="Android" />
+
+        <com.gojek.trendingrepos.widget.CustomTextView
+            android:id="@+id/tvRepoStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/md_margin_padding_size_medium"
+            android:layout_marginTop="@dimen/md_margin_padding_size_small"
+            android:drawableStart="@drawable/ic_repo_starts"
+            android:drawablePadding="@dimen/md_margin_padding_size_small"
+            android:lines="1"
+            android:text="@{searchedTrendingRepo.toString(searchedTrendingRepo.stars)}"
+            android:textColor="@color/colorGrey800"
+            android:textSize="@dimen/md_text_size_small"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/tvRepoLang"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoDesc"
+            app:textFont="regular"
+            tools:text="10000" />
+
+        <com.gojek.trendingrepos.widget.CustomTextView
+            android:id="@+id/tvRepoFork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/md_margin_padding_size_medium"
+            android:drawableStart="@drawable/ic_repo_fork"
+            android:drawablePadding="@dimen/md_margin_padding_size_small"
+            android:lines="1"
+            android:text="@{searchedTrendingRepo.toString(searchedTrendingRepo.forks)}"
+            android:textColor="@color/colorGrey800"
+            android:textSize="@dimen/md_text_size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/tvRepoStars"
+            app:layout_constraintTop_toTopOf="@+id/tvRepoStars"
+            app:textFont="regular"
+            tools:text="100" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupExpansion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tvRepoDesc,tvRepoStars,tvRepoFork,tvRepoLang" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

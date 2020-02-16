@@ -13,4 +13,9 @@
     <string name="roboto_bold" translatable="false">roboto_bold</string>
     <string name="roboto_regular_italic" translatable="false">roboto_italic</string>
     <string name="roboto_medium_italic" translatable="false">roboto_medium_italic</string>
+
+    <!--  Data Binding String Templates-->
+    <string name="content_desc_avatar">Avatar</string>
+    <string name="label_no_times">No Items Found</string>
+    <string name="label_unknown">Unknown</string>
 </resources>

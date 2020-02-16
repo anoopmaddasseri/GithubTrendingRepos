@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+		# Material Design Dimensions
+		These dimensions are provided as per Material Design Guidelines
+		to adhere to a 8 dp baseline grid. (With the exception of the
+		toolbar and notification bar.).
+		## References
+		- https://www.google.com/design/spec/layout/metrics-keylines.html
+		- https://material.io/guidelines/style/typography.html#typography-typeface
+	-->
+
+    <!-- Margins & Padding, 8 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->
+    <dimen name="md_margin_padding_size_micro">4dp</dimen>
+    <dimen name="md_margin_padding_size_small">8dp</dimen>
+    <dimen name="md_margin_padding_size_medium">16dp</dimen>
+    <dimen name="md_margin_padding_size_large">24dp</dimen>
+    <dimen name="md_margin_padding_size_xlarge">32dp</dimen>
+    <dimen name="md_margin_padding_size_xxlarge">40dp</dimen>
+    <dimen name="md_margin_padding_size_xxxlarge">48dp</dimen>
+    <dimen name="md_margin_padding_size_xxxxlarge">56dp</dimen>
+    <dimen name="md_margin_padding_size_xxxxxlarge">62dp</dimen>
+
+    <!-- Launcher Icon Size, https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size -->
+    <dimen name="md_launcher_icon_size">@dimen/md_standard_touch_size</dimen>
+
+    <!-- Touch Target Size, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-touch-target-size-->
+    <dimen name="md_standard_touch_size">48dp</dimen>
+
+    <!-- Toolbar, 4 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->
+    <dimen name="md_toolbar_margin_size">4dp</dimen>
+    <dimen name="md_toolbar_icon_size">24dp</dimen>
+
+    <dimen name="md_standard_button_size">60dp</dimen>
+
+    <!-- Font sizes, https://material.io/guidelines/style/typography.html#typography-typeface -->
+    <dimen name="md_text_size_micro">10sp</dimen>
+    <dimen name="md_text_size_small">14sp</dimen>
+    <dimen name="md_text_size_medium">16sp</dimen>
+    <dimen name="md_text_size_large">20sp</dimen>
+    <dimen name="md_text_size_xlarge">34sp</dimen>
+    <dimen name="md_text_size_xxlarge">45sp</dimen>
+    <dimen name="md_text_size_xxxlarge">56sp</dimen>
+    <dimen name="md_text_size_xxxxlarge">112sp</dimen>
+
+    <!-- Component sizes, Width & Height -->
+    <dimen name="md_width_height_size_micro">16dp</dimen>
+    <dimen name="md_width_height_size_small">24dp</dimen>
+    <dimen name="md_width_height_size_medium">32dp</dimen>
+    <dimen name="md_width_height_size_large">40dp</dimen>
+    <dimen name="md_width_height_size_xlarge">48dp</dimen>
+    <dimen name="md_width_height_size_xxlarge">56dp</dimen>
+    <dimen name="md_width_height_size_xxxlarge">64dp</dimen>
+</resources>
