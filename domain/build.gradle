@@ -1,0 +1,28 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    def domainDependencies = rootProject.ext.domainDependencies
+
+    //Standards
+    implementation domainDependencies.kotlin
+
+    //Local libs
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Dependency Injection
+    api domainDependencies.dagger2
+    kapt domainDependencies.dagger2Processor
+
+    //Work managers
+    implementation domainDependencies.coroutinesCore
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+}
