@@ -10,7 +10,9 @@ import com.gojek.trendingrepos.models.TrendingRepositoryUiModel
 
 
 class TrendingRepoSearchResultAdapter(val onClick: (TrendingRepositoryUiModel) -> Unit) :
-    ListAdapter<TrendingRepositoryUiModel, TrendingRepoSearchResultAdapter.TrendingRepoViewHolder>(TrendingRepoDiffUtil) {
+    ListAdapter<TrendingRepositoryUiModel, TrendingRepoSearchResultAdapter.TrendingRepoViewHolder>(
+        TrendingRepoDiffUtil
+    ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrendingRepoViewHolder {
         val context = parent.context
@@ -25,6 +27,8 @@ class TrendingRepoSearchResultAdapter(val onClick: (TrendingRepositoryUiModel) -
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(modelRepository: TrendingRepositoryUiModel, position: Int) {
+            binding.searchedTrendingRepo = modelRepository
+            binding.executePendingBindings()
         }
 
     }
