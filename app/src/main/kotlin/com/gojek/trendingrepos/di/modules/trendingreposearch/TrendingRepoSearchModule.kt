@@ -14,11 +14,11 @@ class TrendingRepoSearchModule {
     fun provideTrendingRepoSearchUseCase(
         trendingRepoSearchRepository: TrendingRepoSearchRepository
     ): TrendingRepositoryUseCase =
-        TrendingRepositoryUseCase()
+        TrendingRepositoryUseCase(trendingRepoSearchRepository)
 
     @Provides
     fun provideTrendingRepoSearchDataSource(apiService: TrendingRepoApiService): TrendingRepoSearchDataSource =
-        TrendingRepoSearchDataSource()
+        TrendingRepoSearchDataSource(apiService)
 
 }
 

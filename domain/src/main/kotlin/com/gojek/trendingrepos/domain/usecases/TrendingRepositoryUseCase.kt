@@ -1,7 +1,10 @@
 package com.gojek.trendingrepos.domain.usecases
 
+import com.gojek.trendingrepos.domain.repository.ITrendingRepoSearchRepository
 import javax.inject.Inject
 
-class TrendingRepositoryUseCase {
+class TrendingRepositoryUseCase @Inject constructor(
+    private val searchRepository: ITrendingRepoSearchRepository
+) {
 
 }
