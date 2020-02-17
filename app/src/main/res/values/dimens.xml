@@ -3,6 +3,7 @@
     <dimen name="margin_default">16dp</dimen>
     <dimen name="padding_default">16dp</dimen>
 
+    <dimen name="dimen_divider_height">1dp</dimen>
     <dimen name="dimen_avatar_placeholder">32dp</dimen>
     <dimen name="dimen_avatar">48dp</dimen>
     <dimen name="dimen_avatar_placeholder_padding">21dp</dimen>
