@@ -125,10 +125,12 @@ class TrendingRepoSearchActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_sort_by_stars -> {
+                trendingRepositoryViewModel.sortTrendingRepoResult(SortType.SortByStars)
                 showSnackbar(rvRepository, getString(R.string.label_sorted_by_star))
                 true
             }
             R.id.action_sort_by_name -> {
+                trendingRepositoryViewModel.sortTrendingRepoResult(SortType.SortByName)
                 showSnackbar(rvRepository, getString(R.string.label_sorted_repo_name))
                 true
             }
