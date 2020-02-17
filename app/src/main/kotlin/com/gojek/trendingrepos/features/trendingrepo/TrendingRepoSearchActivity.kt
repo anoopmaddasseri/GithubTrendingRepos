@@ -1,6 +1,8 @@
 package com.gojek.trendingrepos.features.trendingrepo
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
@@ -10,6 +12,7 @@ import com.gojek.trendingrepos.base.BaseActivity
 import com.gojek.trendingrepos.commons.Error
 import com.gojek.trendingrepos.commons.Loading
 import com.gojek.trendingrepos.commons.Success
+import com.gojek.trendingrepos.models.SortType
 import com.gojek.trendingrepos.models.TrendingRepositoryUiModel
 import com.gojek.trendingrepos.util.*
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
@@ -32,6 +35,7 @@ class TrendingRepoSearchActivity : BaseActivity() {
     }
 
     override fun initComponents(savedInstanceState: Bundle?) {
+        enableHomeUp(R.string.title_trending)
         observeUiState()
         observeSearchResults()
         addListeners()
@@ -111,6 +115,25 @@ class TrendingRepoSearchActivity : BaseActivity() {
         hideLoadingState()
         layoutError.show()
         showSnackbar(rvRepository, "${error.message}")
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_sort_by_stars -> {
+                showSnackbar(rvRepository, getString(R.string.label_sorted_by_star))
+                true
+            }
+            R.id.action_sort_by_name -> {
+                showSnackbar(rvRepository, getString(R.string.label_sorted_repo_name))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 }
