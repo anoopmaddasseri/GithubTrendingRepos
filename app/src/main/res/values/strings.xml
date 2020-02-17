@@ -14,11 +14,6 @@
     <string name="roboto_regular_italic" translatable="false">roboto_italic</string>
     <string name="roboto_medium_italic" translatable="false">roboto_medium_italic</string>
 
-    <!--  Data Binding String Templates-->
-    <string name="content_desc_avatar">Avatar</string>
-    <string name="label_no_times">No Items Found</string>
-    <string name="label_unknown">Unknown</string>
-
     <!--Common Info-->
     <string name="info_again_exit">Press again to exit</string>
     <string name="info_gamification_message">An alien is probably blocking your signal.</string>
@@ -26,5 +21,20 @@
     <!--Common Errors-->
     <string name="error_no_browser">You don\'t have any browser to open web page</string>
     <string name="error_something_went_wrong">Something went wrong..</string>
+
+    <!--Common Actions-->
+    <string name="action_retry">Retry</string>
+
+    <!-- Trending Repo Search -->
+    <string name="label_sort_by_stars">Sort by stars</string>
+    <string name="label_sort_by_name">Sort by name</string>
+    <string name="label_sorted_by_star">Sorted by repository stars</string>
+    <string name="label_sorted_repo_name">Sorted by repository name</string>
+    <string name="title_trending">Trending</string>
+
+    <!--  Data Binding String Templates-->
+    <string name="content_desc_avatar">Avatar</string>
+    <string name="label_no_times">No Items Found</string>
+    <string name="label_unknown">Unknown</string>
 
 </resources>
