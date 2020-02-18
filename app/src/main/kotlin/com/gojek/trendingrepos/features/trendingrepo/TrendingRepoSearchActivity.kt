@@ -28,6 +28,8 @@ class TrendingRepoSearchActivity : BaseActivity() {
 
     private val trendingRepositoryViewModel: TrendingRepositoryViewModel by viewModels { viewModelFactory }
 
+    private var mBackPressed: Long = 0
+
     private val trendingRepoSearchResultAdapter: TrendingRepoSearchResultAdapter by lazy {
         TrendingRepoSearchResultAdapter {
             launchUrl(this, it.url)
@@ -136,6 +138,15 @@ class TrendingRepoSearchActivity : BaseActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onBackPressed() {
+        if (mBackPressed + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed()
+        } else {
+            toast(getString(R.string.info_again_exit))
+        }
+        mBackPressed = System.currentTimeMillis()
     }
 
 }
