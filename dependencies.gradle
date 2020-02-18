@@ -20,6 +20,7 @@ ext {
     dagger2Version = '2.25.3'
     lifecycleExtensionsVersion = '2.1.0'
     cardViewVersion = '1.0.0'
+    glideVersion = '4.10.0'
     recyclerviewAnimationVersion = '3.0.0'
     shimmerAnimationVersion = '0.5.0'
 
@@ -53,6 +54,8 @@ ext {
             lifecycleExtensions    : "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionsVersion",
             lifecycleViewModel     : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleExtensionsVersion",
             cardview               : "androidx.cardview:cardview:$cardViewVersion",
+            glide                  : "com.github.bumptech.glide:glide:$glideVersion",
+            glideCompiler          : "com.github.bumptech.glide:compiler:$glideVersion",
             recyclerviewAnimations : "jp.wasabeef:recyclerview-animators:$recyclerviewAnimationVersion",
             shimmerAnimation       : "com.facebook.shimmer:shimmer:$shimmerAnimationVersion"
     ]
