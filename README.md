@@ -49,8 +49,9 @@ a clear separation of concerns with its Abstraction Principle.
  
  - Trending Repository Listing
  - Repository sorting by stars and name
- - Take user to corrosponding repository on long press
+ - Take user to corresponding repository on long press
  - Pull to refresh repository
+ - Offline Storage ( Scheduled repo remote controller syncing, App will sync with backend server in every 2hrs )
  
 ## Libraries
 
@@ -70,6 +71,7 @@ Following are the Libraries used:
 - [Leak Canary](https://square.github.io/leakcanary/) - Leak Detection Library
 - [Espresso](https://developer.android.com/training/testing/espresso) - Test framework to write UI Tests
 - [recyclerview-animators](https://github.com/wasabeef/recyclerview-animators) - Recycler View Animations
+- [Room Persistence Library](https://developer.android.com/topic/libraries/architecture/room) - Robust database access while harnessing the full power of SQLite
 
 ## Extras
 
