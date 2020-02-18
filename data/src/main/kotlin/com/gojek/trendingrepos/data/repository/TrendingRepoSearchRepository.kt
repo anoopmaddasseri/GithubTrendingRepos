@@ -15,8 +15,8 @@ class TrendingRepoSearchRepository @Inject constructor(
     private val trendingRepoSearchDataSource: TrendingRepoSearchDataSource
 ) : ITrendingRepoSearchRepository {
 
-    override suspend fun searchTrendingRepositories(): Flow<List<TrendingRepo>> {
-        return trendingRepoSearchDataSource.query()
+    override suspend fun searchTrendingRepositories(forceRefresh: Boolean): Flow<List<TrendingRepo>> {
+        return trendingRepoSearchDataSource.query(forceRefresh)
             .map { it.map { results -> results.toDomain() } }
     }
 

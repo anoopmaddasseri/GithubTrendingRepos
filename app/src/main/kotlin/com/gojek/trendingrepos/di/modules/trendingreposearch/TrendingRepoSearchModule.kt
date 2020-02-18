@@ -1,6 +1,7 @@
 package com.gojek.trendingrepos.di.modules.trendingreposearch
 
 import com.gojek.trendingrepos.data.api.TrendingRepoApiService
+import com.gojek.trendingrepos.data.db.TrendingRepoDao
 import com.gojek.trendingrepos.data.repository.TrendingRepoSearchRepository
 import com.gojek.trendingrepos.data.source.TrendingRepoSearchDataSource
 import com.gojek.trendingrepos.domain.usecases.TrendingRepositoryUseCase
@@ -8,8 +9,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class TrendingRepoSearchModule {
-
+open class TrendingRepoSearchModule {
     @Provides
     fun provideTrendingRepoSearchUseCase(
         trendingRepoSearchRepository: TrendingRepoSearchRepository
@@ -17,9 +17,11 @@ class TrendingRepoSearchModule {
         TrendingRepositoryUseCase(trendingRepoSearchRepository)
 
     @Provides
-    fun provideTrendingRepoSearchDataSource(apiService: TrendingRepoApiService): TrendingRepoSearchDataSource =
-        TrendingRepoSearchDataSource(apiService)
-
+    fun provideTrendingRepoSearchDataSource(
+        apiService: TrendingRepoApiService,
+        trendingRepoDao: TrendingRepoDao
+    ): TrendingRepoSearchDataSource =
+        TrendingRepoSearchDataSource(apiService, trendingRepoDao)
 }
 
 

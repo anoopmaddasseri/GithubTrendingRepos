@@ -62,7 +62,7 @@ class TrendingRepoSearchActivity : BaseActivity() {
 
     private fun addListeners() {
         swipeRepoRefresh.setOnRefreshListener {
-            fetchTrendingRepositories()
+            fetchTrendingRepositories(true)
             swipeRepoRefresh.isRefreshing = false
         }
         lookUpButton.setOnClickListener {
@@ -70,8 +70,8 @@ class TrendingRepoSearchActivity : BaseActivity() {
         }
     }
 
-    private fun fetchTrendingRepositories() {
-        trendingRepositoryViewModel.executeTrendingRepositorySearch()
+    private fun fetchTrendingRepositories(forceRefresh: Boolean = false) {
+        trendingRepositoryViewModel.executeTrendingRepositorySearch(forceRefresh)
     }
 
     private fun displayLoadingState() {

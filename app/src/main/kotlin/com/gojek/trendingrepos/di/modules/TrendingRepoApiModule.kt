@@ -32,7 +32,7 @@ open class TrendingRepoApiModule {
 
     @Singleton
     @Provides
-    open fun provideStarWarsApi(retrofit: Retrofit): TrendingRepoApiService {
+    open fun provideTrendingRepoApi(retrofit: Retrofit): TrendingRepoApiService {
         return retrofit.create(TrendingRepoApiService::class.java)
     }
 

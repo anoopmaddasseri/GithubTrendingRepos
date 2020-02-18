@@ -13,5 +13,5 @@ import retrofit2.http.GET
 
 interface TrendingRepoApiService {
     @GET("repositories")
-    suspend fun searchTrendingRepositories(): List<TrendingRepoResponse>
+    suspend fun searchTrendingRepositories(): MutableList<TrendingRepoResponse>
 }

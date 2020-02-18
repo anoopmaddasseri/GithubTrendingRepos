@@ -4,5 +4,5 @@ import com.gojek.trendingrepos.domain.models.TrendingRepo
 import kotlinx.coroutines.flow.Flow
 
 interface ITrendingRepoSearchRepository {
-    suspend fun searchTrendingRepositories(): Flow<List<TrendingRepo>>
+    suspend fun searchTrendingRepositories(params: Boolean): Flow<List<TrendingRepo>>
 }

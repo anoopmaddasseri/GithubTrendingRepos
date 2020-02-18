@@ -6,6 +6,6 @@ import javax.inject.Inject
 class TrendingRepositoryUseCase @Inject constructor(
     private val searchRepository: ITrendingRepoSearchRepository
 ) {
-    suspend operator fun invoke() =
-        searchRepository.searchTrendingRepositories()
+    suspend operator fun invoke(forceRefresh: Boolean) =
+        searchRepository.searchTrendingRepositories(forceRefresh)
 }

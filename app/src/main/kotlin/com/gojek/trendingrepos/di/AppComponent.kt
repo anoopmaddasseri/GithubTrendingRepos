@@ -3,6 +3,7 @@ package com.gojek.trendingrepos.di
 import android.content.Context
 import com.gojek.trendingrepos.GojekTrendingReposApplication
 import com.gojek.trendingrepos.di.modules.ActivityBuilderModule
+import com.gojek.trendingrepos.di.modules.ApplicationModule
 import com.gojek.trendingrepos.di.modules.TrendingRepoApiModule
 import com.gojek.trendingrepos.di.modules.ViewModelModule
 import dagger.BindsInstance
@@ -17,6 +18,7 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,
+        ApplicationModule::class,
         TrendingRepoApiModule::class,
         ActivityBuilderModule::class,
         ViewModelModule::class

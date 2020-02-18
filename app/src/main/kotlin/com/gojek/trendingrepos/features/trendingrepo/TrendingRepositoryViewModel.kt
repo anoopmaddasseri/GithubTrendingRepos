@@ -6,14 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gojek.trendingrepos.commons.Loading
 import com.gojek.trendingrepos.commons.Success
-import com.gojek.trendingrepos.commons.UiState
 import com.gojek.trendingrepos.commons.UiStateViewModel
 import com.gojek.trendingrepos.domain.usecases.TrendingRepositoryUseCase
 import com.gojek.trendingrepos.mappers.toPresentation
 import com.gojek.trendingrepos.models.SortType
 import com.gojek.trendingrepos.models.TrendingRepositoryUiModel
 import kotlinx.coroutines.*
-
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
@@ -30,10 +28,10 @@ class TrendingRepositoryViewModel @Inject constructor(
     private var _searchResultsTrendingRepository: MutableLiveData<List<TrendingRepositoryUiModel>> =
         MutableLiveData()
 
-    fun executeTrendingRepositorySearch() {
+    fun executeTrendingRepositorySearch(forceRefresh: Boolean = false) {
         _uiState.value = Loading
         viewModelScope.launch(handler) {
-            trendingRepositoryUseCase().collect { results ->
+            trendingRepositoryUseCase(forceRefresh).collect { results ->
                 _searchResultsTrendingRepository.value = results.map { it.toPresentation() }
             }
             _uiState.value = Success

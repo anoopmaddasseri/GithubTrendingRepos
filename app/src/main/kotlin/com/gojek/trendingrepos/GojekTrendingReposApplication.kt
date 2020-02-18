@@ -8,6 +8,8 @@
 package com.gojek.trendingrepos
 
 import android.app.Application
+import android.content.Context
+import androidx.multidex.MultiDex
 import com.gojek.trendingrepos.di.AppComponent
 import com.gojek.trendingrepos.di.DaggerAppComponent
 import dagger.android.AndroidInjector
@@ -28,6 +30,11 @@ open class GojekTrendingReposApplication : Application(), HasAndroidInjector {
             .create(applicationContext)
 
         getApplicationComponent().inject(this)
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
     }
 
     open fun getApplicationComponent(): AppComponent = appComponent

@@ -5,10 +5,6 @@ ext {
     minSdkVersion = 19
     buildToolsVersion = "29.0.2"
 
-    //App Versioning
-    versionCode = 1
-    versionName = "1.0"
-
     //Dependencies Version - Presentation
     appcompatVersion = '1.1.0'
     androidxCoreKtxVersion = '1.2.0'
@@ -23,10 +19,12 @@ ext {
     glideVersion = '4.10.0'
     recyclerviewAnimationVersion = '3.0.0'
     shimmerAnimationVersion = '0.5.0'
+    multidexVersion = "2.0.1"
 
 
     //Data
     retrofitVersion = '2.7.0'
+    roomVersion = '2.2.3'
     moshiConverterVersion = '2.7.0'
     loggingInterceptorVersion = '4.2.1'
 
@@ -57,12 +55,18 @@ ext {
             glide                  : "com.github.bumptech.glide:glide:$glideVersion",
             glideCompiler          : "com.github.bumptech.glide:compiler:$glideVersion",
             recyclerviewAnimations : "jp.wasabeef:recyclerview-animators:$recyclerviewAnimationVersion",
-            shimmerAnimation       : "com.facebook.shimmer:shimmer:$shimmerAnimationVersion"
+            shimmerAnimation       : "com.facebook.shimmer:shimmer:$shimmerAnimationVersion",
+            multidex               : "androidx.multidex:multidex:$multidexVersion",
+            roomRuntime            : "androidx.room:room-runtime:$roomVersion"
     ]
 
     dataDependencies = [
             kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             retrofit          : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            roomRuntime       : "androidx.room:room-runtime:$roomVersion",
+            roomCompiler      : "androidx.room:room-compiler:$roomVersion",
+            roomRxjava2       : "androidx.room:room-rxjava2:$roomVersion",
+            roomKtx           : "androidx.room:room-ktx:$roomVersion",
             moshiConverter    : "com.squareup.retrofit2:converter-moshi:$moshiConverterVersion",
             loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion",
             coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion",

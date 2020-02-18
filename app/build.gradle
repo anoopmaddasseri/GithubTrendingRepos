@@ -86,6 +86,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode isIDE ? 12345678 : versionCode()
         versionName isIDE ? "instantrun.ver" : versionName(getBranchPrefix(buildType), versionCode)
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -170,6 +171,12 @@ dependencies {
     implementation appDependencies.dagger2Android
     kapt appDependencies.dagger2AndroidProcessor
     kapt appDependencies.dagger2Processor
+
+    //Multidex
+    implementation appDependencies.multidex
+
+    //Room database
+    implementation appDependencies.roomRuntime
 
     //Test libs
     testImplementation testDependencies.junit
