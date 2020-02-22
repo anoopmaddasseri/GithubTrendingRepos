@@ -46,62 +46,69 @@ a clear separation of concerns with its Abstraction Principle.</p>
 <li class="has-line-data" data-line-start="52" data-line-end="53">Pull to refresh repository</li>
 <li class="has-line-data" data-line-start="53" data-line-end="55">Offline Storage ( Scheduled repo remote controller syncing, App will sync with backend server in every 2hrs )</li>
 </ul>
-<h2 class="code-line" data-line-start=55 data-line-end=56 ><a id="Libraries_55"></a>Libraries</h2>
-<p class="has-line-data" data-line-start="57" data-line-end="58">Following are the Libraries used:</p>
+<h2 class="code-line" data-line-start=55 data-line-end=56 ><a id="Testing_55"></a>Testing</h2>
 <ul>
-<li class="has-line-data" data-line-start="59" data-line-end="60"><a href="https://material.io/develop/android/docs/getting-started/">Material Design</a> - Google material design UIs.</li>
-<li class="has-line-data" data-line-start="60" data-line-end="61"><a href="https://github.com/google/dagger">Dagger2</a> - Dependency Injection lib with large community support.</li>
-<li class="has-line-data" data-line-start="61" data-line-end="62"><a href="https://square.github.io/retrofit/">Retrofit</a> - Network Http Client</li>
-<li class="has-line-data" data-line-start="62" data-line-end="65"><a href="https://developer.android.com/jetpack">Jetpack</a>
+<li class="has-line-data" data-line-start="57" data-line-end="58"><code>app/test/ - Unit tests</code> - test -&gt; Right click on package name(com.gojek.trendingrepos) -&gt; Run Test In ‘com.gojek.trendingrepos’</li>
+<li class="has-line-data" data-line-start="58" data-line-end="60"><code>app/androidTest/ - Instrumentation tests</code> - androidTest -&gt; Right click on package name(com.gojek.trendingrepos) -&gt; Run Test In ‘com.gojek.trendingrepos’</li>
+</ul>
+<h2 class="code-line" data-line-start=60 data-line-end=61 ><a id="Libraries_60"></a>Libraries</h2>
+<p class="has-line-data" data-line-start="62" data-line-end="63">Following are the Libraries used:</p>
 <ul>
-<li class="has-line-data" data-line-start="63" data-line-end="64"><a href="https://developer.android.com/topic/libraries/architecture/viewmodel">Viewmodel</a> - Channel between use cases and UI</li>
-<li class="has-line-data" data-line-start="64" data-line-end="65"><a href="https://developer.android.com/topic/libraries/data-binding">Data Binding</a> - For binding of UI components in layouts to data sources, and coroutines support.</li>
+<li class="has-line-data" data-line-start="64" data-line-end="65"><a href="https://material.io/develop/android/docs/getting-started/">Material Design</a> - Google material design UIs.</li>
+<li class="has-line-data" data-line-start="65" data-line-end="66"><a href="https://github.com/google/dagger">Dagger2</a> - Dependency Injection lib with large community support.</li>
+<li class="has-line-data" data-line-start="66" data-line-end="67"><a href="https://square.github.io/retrofit/">Retrofit</a> - Network Http Client</li>
+<li class="has-line-data" data-line-start="67" data-line-end="70"><a href="https://developer.android.com/jetpack">Jetpack</a>
+<ul>
+<li class="has-line-data" data-line-start="68" data-line-end="69"><a href="https://developer.android.com/topic/libraries/architecture/viewmodel">Viewmodel</a> - Channel between use cases and UI</li>
+<li class="has-line-data" data-line-start="69" data-line-end="70"><a href="https://developer.android.com/topic/libraries/data-binding">Data Binding</a> - For binding of UI components in layouts to data sources, and coroutines support.</li>
 </ul>
 </li>
-<li class="has-line-data" data-line-start="65" data-line-end="66"><a href="https://github.com/square/moshi">Moshi</a> - Data, Model &amp; Entity JSON Parser that understands Kotlin non-nullable and default parameters</li>
-<li class="has-line-data" data-line-start="66" data-line-end="67"><a href="https://github.com/square/okhttp/blob/master/okhttp-logging-interceptor/README.md">okhttp-logging-interceptor</a> - logs HTTP request and response data.</li>
-<li class="has-line-data" data-line-start="67" data-line-end="68"><a href="https://site.mockito.org/">Mockito</a> - Mocking framework used in unit tests.</li>
-<li class="has-line-data" data-line-start="68" data-line-end="69"><a href="https://github.com/Kotlin/kotlinx.coroutines">kotlinx.coroutines</a> - Library Support for coroutines, provides <code>runBlocking</code> coroutine builder used in tests</li>
-<li class="has-line-data" data-line-start="69" data-line-end="70"><a href="https://github.com/square/okhttp/tree/master/mockwebserver">MockWebServer</a> - web server for testing HTTP clients.</li>
-<li class="has-line-data" data-line-start="70" data-line-end="71"><a href="https://square.github.io/leakcanary/">Leak Canary</a> - Leak Detection Library</li>
-<li class="has-line-data" data-line-start="71" data-line-end="72"><a href="https://developer.android.com/training/testing/espresso">Espresso</a> - Test framework to write UI Tests</li>
-<li class="has-line-data" data-line-start="72" data-line-end="73"><a href="https://github.com/wasabeef/recyclerview-animators">recyclerview-animators</a> - Recycler View Animations</li>
-<li class="has-line-data" data-line-start="73" data-line-end="75"><a href="https://developer.android.com/topic/libraries/architecture/room">Room Persistence Library</a> - Robust database access while harnessing the full power of SQLite</li>
+<li class="has-line-data" data-line-start="70" data-line-end="71"><a href="https://github.com/square/moshi">Moshi</a> - Data, Model &amp; Entity JSON Parser that understands Kotlin non-nullable and default parameters</li>
+<li class="has-line-data" data-line-start="71" data-line-end="72"><a href="https://github.com/square/okhttp/blob/master/okhttp-logging-interceptor/README.md">okhttp-logging-interceptor</a> - logs HTTP request and response data.</li>
+<li class="has-line-data" data-line-start="72" data-line-end="73"><a href="https://site.mockito.org/">Mockito</a> - Mocking framework used in unit tests.</li>
+<li class="has-line-data" data-line-start="73" data-line-end="74"><a href="https://github.com/Kotlin/kotlinx.coroutines">kotlinx.coroutines</a> - Library Support for coroutines, provides <code>runBlocking</code> coroutine builder used in tests</li>
+<li class="has-line-data" data-line-start="74" data-line-end="75"><a href="https://github.com/square/okhttp/tree/master/mockwebserver">MockWebServer</a> - web server for testing HTTP clients.</li>
+<li class="has-line-data" data-line-start="75" data-line-end="76"><a href="https://square.github.io/leakcanary/">Leak Canary</a> - Leak Detection Library</li>
+<li class="has-line-data" data-line-start="76" data-line-end="77"><a href="https://developer.android.com/training/testing/espresso">Espresso</a> - Test framework to write UI Tests</li>
+<li class="has-line-data" data-line-start="77" data-line-end="78"><a href="https://github.com/wasabeef/recyclerview-animators">recyclerview-animators</a> - Recycler View Animations</li>
+<li class="has-line-data" data-line-start="78" data-line-end="79"><a href="https://developer.android.com/topic/libraries/architecture/room">Room Persistence Library</a> - Robust database access while harnessing the full power of SQLite</li>
+<li class="has-line-data" data-line-start="79" data-line-end="80"><a href="http://robolectric.org/">Robolectric</a> - Android Unit Tests framework.</li>
+<li class="has-line-data" data-line-start="80" data-line-end="82"><a href="https://truth.dev/">Truth</a> - Provides fluent assertions for Java and Android</li>
 </ul>
-<h2 class="code-line" data-line-start=75 data-line-end=76 ><a id="Extras_75"></a>Extras</h2>
-<h4 class="code-line" data-line-start=77 data-line-end=78 ><a id="Gradle_Dependencies_77"></a>Gradle Dependencies</h4>
+<h2 class="code-line" data-line-start=82 data-line-end=83 ><a id="Extras_82"></a>Extras</h2>
+<h4 class="code-line" data-line-start=84 data-line-end=85 ><a id="Gradle_Dependencies_84"></a>Gradle Dependencies</h4>
 <ul>
-<li class="has-line-data" data-line-start="79" data-line-end="80">dependencies.gradle - Centralized versioning of gradle dependencies in a global file</li>
-<li class="has-line-data" data-line-start="80" data-line-end="82">Version.properties - App version details</li>
+<li class="has-line-data" data-line-start="86" data-line-end="87">dependencies.gradle - Centralized versioning of gradle dependencies in a global file</li>
+<li class="has-line-data" data-line-start="87" data-line-end="89">Version.properties - App version details</li>
 </ul>
-<p class="has-line-data" data-line-start="82" data-line-end="83">App version details</p>
-<h4 class="code-line" data-line-start=84 data-line-end=85 ><a id="Resource_Values_84"></a>Resource Values</h4>
+<p class="has-line-data" data-line-start="89" data-line-end="90">App version details</p>
+<h4 class="code-line" data-line-start=91 data-line-end=92 ><a id="Resource_Values_91"></a>Resource Values</h4>
 <ul>
-<li class="has-line-data" data-line-start="86" data-line-end="87">Fonts</li>
-<li class="has-line-data" data-line-start="87" data-line-end="88">Dimension &amp; String Values</li>
-<li class="has-line-data" data-line-start="88" data-line-end="89">Themes &amp; Styles</li>
-<li class="has-line-data" data-line-start="89" data-line-end="91">Network Config</li>
+<li class="has-line-data" data-line-start="93" data-line-end="94">Fonts</li>
+<li class="has-line-data" data-line-start="94" data-line-end="95">Dimension &amp; String Values</li>
+<li class="has-line-data" data-line-start="95" data-line-end="96">Themes &amp; Styles</li>
+<li class="has-line-data" data-line-start="96" data-line-end="98">Network Config</li>
 </ul>
-<h2 class="code-line" data-line-start=91 data-line-end=92 ><a id="Screenshots_91"></a>Screenshots</h2>
+<h2 class="code-line" data-line-start=98 data-line-end=99 ><a id="Screenshots_98"></a>Screenshots</h2>
 <ul>
-<li class="has-line-data" data-line-start="93" data-line-end="95"><a href="https://www.dropbox.com/sh/0a8nn5zz7m4wb8m/AACVCveAAadl76X80Rq34NEfa?dl=0">Architecure</a></li>
+<li class="has-line-data" data-line-start="100" data-line-end="102"><a href="https://www.dropbox.com/sh/0a8nn5zz7m4wb8m/AACVCveAAadl76X80Rq34NEfa?dl=0">Architecure</a></li>
 </ul>
-<p class="has-line-data" data-line-start="95" data-line-end="98"><img src="media/arch-presentation.png" alt="Presentation Layer"><br>
+<p class="has-line-data" data-line-start="102" data-line-end="105"><img src="media/arch-presentation.png" alt="Presentation Layer"><br>
 <img src="media/arch-data.png" alt="Data Layer"><br>
 <img src="media/arch-domain.png" alt="Domain Layer"></p>
 <ul>
-<li class="has-line-data" data-line-start="99" data-line-end="101"><a href="https://www.dropbox.com/sh/57jeby7hmdjc221/AABoJNHSLdzV1Ruk4KvbDGLwa?dl=0">App Screens</a></li>
+<li class="has-line-data" data-line-start="106" data-line-end="108"><a href="https://www.dropbox.com/sh/57jeby7hmdjc221/AABoJNHSLdzV1Ruk4KvbDGLwa?dl=0">App Screens</a></li>
 </ul>
-<p class="has-line-data" data-line-start="101" data-line-end="107"><img src="media/app-screen-loading.png" alt="Data Flow Diagram"><br>
+<p class="has-line-data" data-line-start="108" data-line-end="114"><img src="media/app-screen-loading.png" alt="Data Flow Diagram"><br>
 <img src="media/app-screen-list.png" alt="Repositories List"><br>
 <img src="media/app-screen-expanded.png" alt="Repositories List Expanded"><br>
 <img src="media/app-screen-sort.png" alt="Repo Sort"><br>
 <img src="media/app-screen-reload.png" alt="Repository Refresh"><br>
 <img src="media/app-screen-retry.png" alt="Error Retry"></p>
-<h2 class="code-line" data-line-start=108 data-line-end=109 ><a id="Demo_108"></a>Demo</h2>
-<p class="has-line-data" data-line-start="110" data-line-end="111"><a href="https://www.dropbox.com/s/kme79skgurv6a9v/media.io_app-demo.mp4?dl=0">Demo Video</a></p>
-<h2 class="code-line" data-line-start=112 data-line-end=113 ><a id="License_112"></a>License</h2>
-<pre><code class="has-line-data" data-line-start="115" data-line-end="129">  Copyright 2020 Anoo M Maddasseri
+<h2 class="code-line" data-line-start=115 data-line-end=116 ><a id="Demo_115"></a>Demo</h2>
+<p class="has-line-data" data-line-start="117" data-line-end="118"><a href="https://www.dropbox.com/s/kme79skgurv6a9v/media.io_app-demo.mp4?dl=0">Demo Video</a></p>
+<h2 class="code-line" data-line-start=119 data-line-end=120 ><a id="License_119"></a>License</h2>
+<pre><code class="has-line-data" data-line-start="122" data-line-end="136">  Copyright 2020 Anoo M Maddasseri
   
   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
   you may not use this file except in compliance with the License.

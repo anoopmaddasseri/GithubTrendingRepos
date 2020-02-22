@@ -53,16 +53,21 @@ a clear separation of concerns with its Abstraction Principle.
  - Pull to refresh repository
  - Offline Storage ( Scheduled repo remote controller syncing, App will sync with backend server in every 2hrs )
  
+ ## Testing
+
+ - `app/test/ - Unit tests` - test -> Right click on package name(com.gojek.trendingrepos) -> Run Test In 'com.gojek.trendingrepos'
+ - `app/androidTest/ - Instrumentation tests` - androidTest -> Right click on package name(com.gojek.trendingrepos) -> Run Test In 'com.gojek.trendingrepos'
+
 ## Libraries
 
 Following are the Libraries used:
 
 - [Material Design](https://material.io/develop/android/docs/getting-started/) - Google material design UIs.
 - [Dagger2](https://github.com/google/dagger) - Dependency Injection lib with large community support.
-- [Retrofit](https://square.github.io/retrofit/) - Network Http Client 
+- [Retrofit](https://square.github.io/retrofit/) - Network Http Client
 - [Jetpack](https://developer.android.com/jetpack)
   - [Viewmodel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Channel between use cases and UI
-  - [Data Binding](https://developer.android.com/topic/libraries/data-binding) - For binding of UI components in layouts to data sources, and coroutines support.  
+  - [Data Binding](https://developer.android.com/topic/libraries/data-binding) - For binding of UI components in layouts to data sources, and coroutines support.
 - [Moshi](https://github.com/square/moshi) - Data, Model & Entity JSON Parser that understands Kotlin non-nullable and default parameters
 - [okhttp-logging-interceptor](https://github.com/square/okhttp/blob/master/okhttp-logging-interceptor/README.md) - logs HTTP request and response data.
 - [Mockito](https://site.mockito.org/) - Mocking framework used in unit tests.
@@ -72,6 +77,8 @@ Following are the Libraries used:
 - [Espresso](https://developer.android.com/training/testing/espresso) - Test framework to write UI Tests
 - [recyclerview-animators](https://github.com/wasabeef/recyclerview-animators) - Recycler View Animations
 - [Room Persistence Library](https://developer.android.com/topic/libraries/architecture/room) - Robust database access while harnessing the full power of SQLite
+- [Robolectric](http://robolectric.org/) - Android Unit Tests framework.
+- [Truth](https://truth.dev/) - Provides fluent assertions for Java and Android
 
 ## Extras
 
@@ -108,13 +115,13 @@ App version details
 
 ## Demo
 
-[Demo Video](https://www.dropbox.com/s/kme79skgurv6a9v/media.io_app-demo.mp4?dl=0) 
+[Demo Video](https://www.dropbox.com/s/kme79skgurv6a9v/media.io_app-demo.mp4?dl=0)
 
 ## License
 
  ```
    Copyright 2020 Anoop M Maddasseri
-   
+
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
