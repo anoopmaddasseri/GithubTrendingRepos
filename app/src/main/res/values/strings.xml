@@ -21,6 +21,7 @@
     <!--Common Errors-->
     <string name="error_no_browser">You don\'t have any browser to open web page</string>
     <string name="error_something_went_wrong">Something went wrong..</string>
+    <string name="error_offline_test_scenario">Disable data connection to see offline behaviour</string>
 
     <!--Common Actions-->
     <string name="action_retry">Retry</string>

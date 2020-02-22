@@ -10,6 +10,8 @@ import androidx.core.graphics.drawable.DrawableCompat
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.gojek.trendingrepos.R
+import com.gojek.trendingrepos.data.utils.AppLogger
+import java.lang.IllegalArgumentException
 
 
 /**
@@ -23,7 +25,11 @@ fun Context.toast(message: CharSequence) =
 fun TextView.setDrawableBackgroundColor(color: String) {
     compoundDrawables[0]?.let {
         val wrappedDrawable = DrawableCompat.wrap(it)
-        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(color))
+        try {
+            DrawableCompat.setTint(wrappedDrawable, Color.parseColor(color))
+        } catch (ignore: IllegalArgumentException) {
+            AppLogger.logD("setDrawableBackgroundColor {}", "Unknown color")
+        }
     }
 }
 

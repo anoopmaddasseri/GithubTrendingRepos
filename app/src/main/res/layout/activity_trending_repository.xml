@@ -53,6 +53,15 @@
                 layout="@layout/layout_error_status_notifier"
                 android:visibility="gone" />
 
+            <View
+                android:id="@+id/vInvisible"
+                android:layout_width="@dimen/md_width_height_size_micro"
+                android:layout_height="@dimen/md_width_height_size_micro"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </FrameLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -87,7 +87,7 @@ android {
         versionCode isIDE ? 12345678 : versionCode()
         versionName isIDE ? "instantrun.ver" : versionName(getBranchPrefix(buildType), versionCode)
         multiDexEnabled true
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.gojek.trendingrepos.runner.MockTestRunner"
     }
     buildTypes {
         release {
@@ -180,7 +180,24 @@ dependencies {
 
     //Test libs
     testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.androidxJunit
-    androidTestImplementation testDependencies.runner
+    testImplementation testDependencies.robolectric
+    testImplementation testDependencies.androidxJunit
+    testImplementation testDependencies.espressoCore
+    testImplementation testDependencies.runner
+    testImplementation testDependencies.rules
+    testImplementation testDependencies.googleTruth
+    testImplementation testDependencies.mockito
+    testImplementation testDependencies.archComponentTest
+    testImplementation testDependencies.coroutinesTest
+    testImplementation testDependencies.mockitoInline
     androidTestImplementation testDependencies.espressoCore
+    androidTestImplementation testDependencies.runner
+    androidTestImplementation testDependencies.rules
+    androidTestImplementation testDependencies.androidxJunit
+    androidTestImplementation testDependencies.androidxCoreTest
+    androidTestImplementation testDependencies.mockWebServer
+    androidTestImplementation testDependencies.espressoContrib
+    androidTestImplementation testDependencies.espressoIntents
+    kaptAndroidTest testDependencies.dagger2Processor
+    kaptAndroidTest appDependencies.dagger2AndroidProcessor
 }

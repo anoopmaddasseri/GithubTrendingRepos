@@ -22,7 +22,7 @@ class TrendingRepoSearchResultAdapter(val onClick: (TrendingRepositoryUiModel) -
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrendingRepoViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        return TrendingRepoViewHolder(ItemTrendingRepoBinding.inflate(inflater))
+        return TrendingRepoViewHolder(ItemTrendingRepoBinding.inflate(inflater, parent, false))
     }
 
     override fun onBindViewHolder(holder: TrendingRepoViewHolder, position: Int): Unit =
@@ -35,10 +35,10 @@ class TrendingRepoSearchResultAdapter(val onClick: (TrendingRepositoryUiModel) -
             binding.searchedTrendingRepo = modelRepository
             binding.executePendingBindings()
             populateData(modelRepository)
-            binding.root.setOnClickListener {
+            binding.containerTrendingRepo.setOnClickListener {
                 expandCollapse(modelRepository, position)
             }
-            binding.root.setOnLongClickListener {
+            binding.containerTrendingRepo.setOnLongClickListener {
                 onClick(modelRepository)
                 return@setOnLongClickListener true
             }

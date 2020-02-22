@@ -70,6 +70,10 @@ class TrendingRepoSearchActivity : BaseActivity() {
         lookUpButton.setOnClickListener {
             fetchTrendingRepositories()
         }
+
+        vInvisible.setOnClickListener {
+            showAlertMessage(getString(R.string.error_offline_test_scenario))
+        }
     }
 
     private fun fetchTrendingRepositories(forceRefresh: Boolean = false) {
