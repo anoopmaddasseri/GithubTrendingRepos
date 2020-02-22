@@ -116,8 +116,8 @@ android {
         exclude 'META-INF/NOTICE.txt'
     }
 
-    testOptions {
-        unitTests.returnDefaultValues = true
+    testOptions.unitTests {
+        includeAndroidResources = true
     }
 
     compileOptions {
