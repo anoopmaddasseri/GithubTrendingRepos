@@ -1,4 +1,4 @@
-package com.k0d4black.theforce.viewmodels
+package com.gojek.trendingrepos.viewmodels
 
 import com.gojek.trendingrepos.BaseViewModelTest
 import com.gojek.trendingrepos.domain.usecases.TrendingRepositoryUseCase
