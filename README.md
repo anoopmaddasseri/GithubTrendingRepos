@@ -87,8 +87,6 @@ Following are the Libraries used:
 - dependencies.gradle - Centralized versioning of gradle dependencies in a global file
 - Version.properties - App version details
 
-App version details
-
 #### Resource Values
 
 - Fonts
@@ -115,7 +113,7 @@ App version details
 
 ## Demo
 
-[Demo Video](https://www.dropbox.com/s/kme79skgurv6a9v/media.io_app-demo.mp4?dl=0)
+[Demo Video](https://www.dropbox.com/s/1irwrefq9pqaeq2/app-demo.mp4?dl=0)
 
 ## License
 
