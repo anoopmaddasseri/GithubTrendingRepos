@@ -1,4 +1,4 @@
-# Github Trending Repositories [Gojek]
+# Github Trending Repositories [mvvmclean]
 
 An Android app consuming [GitHub Trending API](https://githubtrendingapi.docs.apiary.io/#reference/0/repositories/list-trending-repositories) to display the current trending
 Github repositories. It has been built using kotlin with clean architecture principles, Repository Pattern and MVVM
@@ -10,7 +10,7 @@ Min API Level Supported : 19
 
 Before running the project check your gradle version matches the required.
 ```
-package-name: com.gojek.trendingrepos
+package-name: com.mvvmclean.trendingrepos
 ```
     compileSdkVersion = 29
     targetSdkVersion = 29
@@ -55,8 +55,8 @@ a clear separation of concerns with its Abstraction Principle.
  
  ## Testing
 
- - `app/test/ - Unit tests` - test -> Right click on package name(com.gojek.trendingrepos) -> Run Test In 'com.gojek.trendingrepos'
- - `app/androidTest/ - Instrumentation tests` - androidTest -> Right click on package name(com.gojek.trendingrepos) -> Run Test In 'com.gojek.trendingrepos'
+ - `app/test/ - Unit tests` - test -> Right click on package name(com.mvvmclean.trendingrepos) -> Run Test In 'com.mvvmclean.trendingrepos'
+ - `app/androidTest/ - Instrumentation tests` - androidTest -> Right click on package name(com.mvvmclean.trendingrepos) -> Run Test In 'com.mvvmclean.trendingrepos'
 
 ## Libraries
 

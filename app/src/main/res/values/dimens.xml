@@ -6,6 +6,7 @@
     <dimen name="dimen_divider_height">1dp</dimen>
     <dimen name="dimen_avatar_placeholder">32dp</dimen>
     <dimen name="dimen_avatar">48dp</dimen>
+    <dimen name="dimen_error_image">200dp</dimen>
     <dimen name="dimen_avatar_placeholder_padding">21dp</dimen>
     <dimen name="dimen_placeholder_username_trailing_margin">36dp</dimen>
     <dimen name="dimen_placeholder_username_leading_margin">16dp</dimen>

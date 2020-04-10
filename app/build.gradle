@@ -81,13 +81,13 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.gojek.trendingrepos"
+        applicationId "com.mvvmclean.trendingrepos"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode isIDE ? 12345678 : versionCode()
         versionName isIDE ? "instantrun.ver" : versionName(getBranchPrefix(buildType), versionCode)
         multiDexEnabled true
-        testInstrumentationRunner "com.gojek.trendingrepos.runner.MockTestRunner"
+        testInstrumentationRunner "com.mvvmclean.trendingrepos.runner.MockTestRunner"
     }
     buildTypes {
         release {

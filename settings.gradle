@@ -1,2 +1,2 @@
 include ':app', ':data', ':domain'
-rootProject.name='Gojek'
+rootProject.name='mvvmclean'

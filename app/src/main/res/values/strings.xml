@@ -16,7 +16,7 @@
 
     <!--Common Info-->
     <string name="info_again_exit">Press again to exit</string>
-    <string name="info_gamification_message">An alien is probably blocking your signal.</string>
+    <string name="info_gamification_message">Don\'t worry, it\'s not you - it\'s us. Sorry about that.</string>
 
     <!--Common Errors-->
     <string name="error_no_browser">You don\'t have any browser to open web page</string>

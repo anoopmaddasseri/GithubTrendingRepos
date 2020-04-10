@@ -7,7 +7,7 @@
 
         <variable
             name="searchedTrendingRepo"
-            type="com.gojek.trendingrepos.models.TrendingRepositoryUiModel" />
+            type="com.mvvmclean.trendingrepos.models.TrendingRepositoryUiModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.gojek.trendingrepos.widget.CustomTextView
+        <com.mvvmclean.trendingrepos.widget.CustomTextView
             android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             app:textFont="regular"
             tools:text="Username" />
 
-        <com.gojek.trendingrepos.widget.CustomTextView
+        <com.mvvmclean.trendingrepos.widget.CustomTextView
             android:id="@+id/tvRepoName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
             app:textFont="regular"
             tools:text="Repo Name" />
 
-        <com.gojek.trendingrepos.widget.CustomTextView
+        <com.mvvmclean.trendingrepos.widget.CustomTextView
             android:id="@+id/tvRepoDesc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
             app:textFont="regular"
             tools:text="Repo Desc" />
 
-        <com.gojek.trendingrepos.widget.CustomTextView
+        <com.mvvmclean.trendingrepos.widget.CustomTextView
             android:id="@+id/tvRepoLang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             app:textFont="regular"
             tools:text="Android" />
 
-        <com.gojek.trendingrepos.widget.CustomTextView
+        <com.mvvmclean.trendingrepos.widget.CustomTextView
             android:id="@+id/tvRepoStars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
             app:textFont="regular"
             tools:text="10000" />
 
-        <com.gojek.trendingrepos.widget.CustomTextView
+        <com.mvvmclean.trendingrepos.widget.CustomTextView
             android:id="@+id/tvRepoFork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
