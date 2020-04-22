@@ -98,18 +98,22 @@ Following are the Libraries used:
 
 - Architecure
 
-![Presentation Layer](media/arch-presentation.png)
-![Data Layer](media/arch-data.png)
-![Domain Layer](media/arch-domain.png)
+<p float="center">
+  <img src="media/arch-presentation.png" title="Presentation Layer" width="200" />
+  <img src="media/arch-domain.png" title="Domain Layer" width="200" />
+  <img src="media/arch-data.png" title="Data Layer" width="200" /> 
+</p>
 
 - App Screens
 
-![Data Flow Diagram](media/app-screen-loading.png)
-![Repositories List](media/app-screen-list.png)
-![Repositories List Expanded](media/app-screen-expanded.png)
-![Repo Sort](media/app-screen-sort.png)
-![Repository Refresh](media/app-screen-reload.png)
-![Error Retry](media/app-screen-retry.png)
+<p float="center">
+  <img src="media/app-screen-loading.png" title="Repository Loading" width="285" />
+  <img src="media/app-screen-list.png" title="Repositories List" width="285" /> 
+  <img src="media/app-screen-expanded.png" title="Repositories List Expanded" width="285" />
+  <img src="media/app-screen-sort.png" title="Repo Sort" width="285" />
+  <img src="media/app-screen-reload.png" title="Repository Refresh" width="285" />
+  <img src="media/app-screen-retry.png" title="Error Retry" width="285" />
+</p>
 
 ## Demo
 
