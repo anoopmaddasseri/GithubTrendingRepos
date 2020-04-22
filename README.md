@@ -28,7 +28,7 @@ package-name: com.mvvmclean.trendingrepos
 ## Table of Contents
 
 - [Architecture Blueprint](#architecture)
-- [App Features](#appfeatures)
+- [Features](#features)
 - [Libraries](#libraries)
 - [Extras](#extras)
 - [Screenshots](#screenshots)
@@ -45,7 +45,7 @@ The Application is split into a three layer architecture inorder to provide clea
 The three layered architectural approach is majorly guided by clean architecture which provides
 a clear separation of concerns with its Abstraction Principle.
 
-## App Features
+## Features
  
  - Trending Repository Listing
  - Repository sorting by stars and name
@@ -99,10 +99,12 @@ Following are the Libraries used:
 - Architecure
 
 <p float="center">
-  <img src="media/arch-presentation.png" title="Presentation Layer" width="200" />
-  <img src="media/arch-domain.png" title="Domain Layer" width="200" />
-  <img src="media/arch-data.png" title="Data Layer" width="200" /> 
+  <img src="media/arch-presentation.png" title="Presentation Layer" width="285" />
+  <img src="media/arch-domain.png" title="Domain Layer" width="285" align="top" />
+  <img src="media/arch-data.png" title="Data Layer" width="285" align="top"/> 
 </p>
+
+##
 
 - App Screens
 
